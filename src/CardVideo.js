@@ -1,17 +1,17 @@
 import React from "react";
 import InfosUser from "./InfosUsuarios";
 
-export default function CardVideo(){
-
-    function reproduzirVideo() {
-        alert("O vídeo está sendo reproduzido");
-    }
+export default function CardVideo(props){
+console.log(props)
+    
+    
     return (
         
-        <div className="box-pagina-principal" onClick={reproduzirVideo} >
-            <img src="https://picsum.photos/400/400?a=1" alt="" />
-            <h4>Video</h4>
-            <InfosUser/>
+        <div className="box-pagina-principal" onClick={()=>props.reproduzirVideo(props.video.nome)} > 
+        <img src={props.video.imagem}/>
+
+            <InfosUser infosUser={props.infosUsuario}/>
+
         </div>
         
         
